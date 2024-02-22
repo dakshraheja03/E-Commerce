@@ -27,7 +27,6 @@ const SignIn = () => {
   // ============= Event Handler End here ===============
   const handleSignUp = async(e) => {
     e.preventDefault();
-
     if (!email) {
       setErrEmail("Enter your email");
     }
@@ -47,13 +46,14 @@ const SignIn = () => {
         });
         const data = await response.json();
         console.log(data)
+        router('/')
         localStorage.setItem('token',data.token)
       } catch (error) {
         console.log(error.message);
       }
       setEmail("");
       setPassword("");
-      router('/')
+      
     }
   };
   return (
