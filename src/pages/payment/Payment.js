@@ -9,7 +9,7 @@ const Payment = () => {
       <div className="pb-10">
         <p>Payment gateway only applicable for Production build.</p>
         <Link to="/">
-          <button className="w-52 h-10 bg-primeColor text-white text-lg mt-4 hover:bg-black duration-300">
+          <button className="w-52 h-10 bg-primeColor text-white text-lg mt-4 hover:bg-black duration-300" id="explore">
             Explore More
           </button>
         </Link>
