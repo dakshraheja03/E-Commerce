@@ -52,6 +52,14 @@ const SignUp = () => {
 
   const handleSignUp = async(e) => {
     e.preventDefault();
+        let containsUppercase = false
+        let containsLowercase = false
+        let containsNumbers = false
+    if(password){
+      containsUppercase = /[A-Z]/.test(password);
+      containsLowercase = /[a-z]/.test(password);
+      containsNumbers = /\d/.test(password);
+    }
     if (checked) {
       if (!clientName) {
         setErrClientName("Enter your name");
@@ -66,9 +74,9 @@ const SignUp = () => {
       if (!password) {
         setErrPassword("Create a password");
       } else {
-        if (password.length < 6) {
-          setErrPassword("Passwords must be at least 6 characters");
-        }
+        if (password.length<6 || !containsUppercase || !containsLowercase || containsNumbers) {
+          setErrPassword("Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, and one number.");
+      }
       }
       // ============== Getting the value ==============
       if (
@@ -76,7 +84,7 @@ const SignUp = () => {
         email &&
         EmailValidation(email) &&
         password &&
-        password.length >= 6
+        password.length >= 6 && containsUppercase && containsLowercase && containsNumbers
       ) {
         try {
           const response = await fetch('http://localhost:8000/api/auth/signup', {
