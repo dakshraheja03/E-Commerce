@@ -46,8 +46,13 @@ const SignIn = () => {
         });
         const data = await response.json();
         console.log(data)
-        router('/')
-        localStorage.setItem('token',data.token)
+        if(response.status==200){
+          router('/')
+          localStorage.setItem('token',data.token)
+        }
+        else{
+          setErrPassword("Enter Valid Credentials");
+        }
       } catch (error) {
         console.log(error.message);
       }
@@ -111,7 +116,7 @@ const SignIn = () => {
                   <input
                     onChange={handlePassword}
                     value={password}
-                    className="w-full h-8 mb-5 placeholder:text-sm placeholder:tracking-wide px-4 text-base font-medium placeholder:font-normal rounded-md border-[1px] border-gray-400 outline-none"
+                    className="w-full h-8 mb-1 placeholder:text-sm placeholder:tracking-wide px-4 text-base font-medium placeholder:font-normal rounded-md border-[1px] border-gray-400 outline-none"
                     type="password"
                     placeholder="Enter your password"
                   />
