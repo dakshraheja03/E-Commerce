@@ -27,7 +27,7 @@ const ProductInfo = ({ productInfo }) => {
             })
           )
         }
-        className="w-full py-4 bg-primeColor hover:bg-black duration-300 text-white text-lg font-titleFont"
+        className="w-full py-4 bg-primeColor hover:bg-black duration-300 text-white text-lg font-titleFont" id="addtocart"
       >
         Add to Cart
       </button>
