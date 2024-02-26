@@ -95,10 +95,11 @@ const SignUp = () => {
             body: JSON.stringify({ username:clientName,email, password }),
           });
           const data = await response.json();
-          if(response.status==201){
+          console.log(response.status)
+          if(response.status===201){
             router('/signin')
           }
-          console.log(data)
+          // console.log(data)
         } catch (error) {
           console.log(error.message);
         }
@@ -136,7 +137,7 @@ const SignUp = () => {
         ) : (
           <form className="w-full lgl:w-[500px] h-screen flex items-center justify-center">
             <div className="px-6 py-4 w-full h-[96%] flex flex-col justify-start overflow-y-scroll scrollbar-thin scrollbar-thumb-primeColor" style={{display:'flex',flexDirection:'column',justifyContent:'center'}}>
-              <h1 className="font-titleFont decoration-[1px] font-semibold text-2xl mdl:text-3xl mb-4">
+              <h1 className="font-titleFont decoration-[1px] font-semibold text-2xl mdl:text-3xl mb-4" id="createaccount">
                 Create your account
               </h1>
               <div className="flex flex-col gap-3">
