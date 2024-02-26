@@ -32,7 +32,7 @@ const SignIn = () => {
     }
 
     if (!password) {
-      setErrPassword("Create a password");
+      setErrPassword("Enter a password");
     }
     // ============== Getting the value ==============
     if (email && password) {
