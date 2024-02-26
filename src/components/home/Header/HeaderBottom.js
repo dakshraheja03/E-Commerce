@@ -124,6 +124,7 @@ const HeaderBottom = () => {
                       }
                       key={item._id}
                       className="max-w-[600px] h-28 bg-gray-100 mb-3 flex items-center gap-3"
+                      id="searchelement"
                     >
                       <img className="w-24" src={item.img} alt="productImg" />
                       <div className="flex flex-col gap-1">
