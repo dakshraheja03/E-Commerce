@@ -98,6 +98,7 @@ const HeaderBottom = () => {
               onChange={handleSearch}
               value={searchQuery}
               placeholder="Search your products here"
+              id="searchbox"
             />
             <FaSearch className="w-5 h-5" />
             {searchQuery && (
