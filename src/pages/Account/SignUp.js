@@ -95,6 +95,9 @@ const SignUp = () => {
             body: JSON.stringify({ username:clientName,email, password }),
           });
           const data = await response.json();
+          if(response.status==201){
+            router('/signin')
+          }
           console.log(data)
         } catch (error) {
           console.log(error.message);
@@ -107,7 +110,6 @@ const SignUp = () => {
         setCity("");
         setCountry("");
         setZip("");
-        router('/signin')
       };
       }
     }
